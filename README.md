@@ -42,6 +42,18 @@ end
 SlugFu("one", context: %w(one one-), naming_strategy: NamingStrategy) # Use a custom strategy for naming, calling #next until a unique name is found
 ```
 
+### Usage with Rails
+
+SlugFu supplies `SlugFu::ModelContext` for ensuring uniqueness on Rails models.
+
+```ruby
+include SlugFu
+
+SlugFu(str, context: SlugFu::ModelContext.new(Book)) # slug will be unique for the `Book#slug` attribute
+SlugFu(str, context: SlugFu::ModelContext.new(Book.where(language: "en")) # slug will be unique for the `Book#slug` attribute in the given scope
+SlugFu(str, context: SlugFu::ModelContext.new(Book, :url_slug)) # slug will be unique for the `Book#url_slug` attribute
+```
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.

@@ -3,6 +3,7 @@ require "singleton"
 
 require "slug_fu/version"
 require "slug_fu/default_naming_strategy"
+require "slug_fu/model_context"
 
 module SlugFu
   def SlugFu(str, context: NoContext.instance, naming_strategy: DefaultNamingStrategy)
