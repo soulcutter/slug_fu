@@ -11,7 +11,7 @@ RSpec.describe SlugFu do
     end
   }
 
-  it "exposes a Sluggable(value) conversion method" do
+  it "exposes a SlugFu(value) conversion method" do
     expect(klass.new(nil).slug).to be_a String
     expect(klass.new("any string").slug).to be_a String
   end
@@ -32,6 +32,6 @@ RSpec.describe SlugFu do
   it "processes various string situations into something sluggy" do
     string = "Hi & just - testing ^ some  stuff && overHere"
     slug = klass.new(string).slug
-    expect(slug).to eq "hi-and-just-testing-some-stuff-andand-overhere"
+    expect(slug).to eq "hi-and-just-testing-some-stuff-and-and-overhere"
   end
 end

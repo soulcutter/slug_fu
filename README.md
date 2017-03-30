@@ -28,7 +28,7 @@ include SlugFu
 
 SlugFu(string) # doesn't need to check uniqueness, just make a slug string
 
-SlugFu(string, context: %w(one two)) # generated slug will unique as far as `context.include?(slugz)` is concerned
+SlugFu(string, context: %w(one two)) # generated slug will unique as far as `context.include?(slug)` is concerned
 
 class NamingStrategy
   def initialize(str)
