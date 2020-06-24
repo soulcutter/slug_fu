@@ -5,8 +5,8 @@ RSpec.describe SlugFu do
     Struct.new(:value) do
       include SlugFu
 
-      def slug(*args)
-        SlugFu(value, *args)
+      def slug(**kwargs)
+        SlugFu(value, **kwargs)
       end
     end
   }
